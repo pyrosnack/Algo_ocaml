@@ -43,7 +43,10 @@ let nb_ht = Hashtbl.create 1000
 
 let rec fact_part_b n k = match ht_find_opt nb_ht (n, k) with
   | Some res -> res
-  | None -> if k = n then big_int_of_int n else fact_part_b n (k+1)
+  | None ->
+    let res = if k = n then big_int_of_int n else fact_part_b n (k+1) in
+    Hashtbl.add nb_ht (n, k) res;
+    res
 
 let num_to_take_b k n =
   if n < k then zero_big_int else
