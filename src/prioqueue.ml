@@ -4,6 +4,8 @@
 (*                                                                            *)
 (******************************************************************************)
 
+open Misc
+
 module type OrderedType =
   sig
     type t
@@ -22,10 +24,6 @@ module type PQ =
     val size: t -> int
     val affiche: t -> unit
   end
-
-let option_get = function
-  | Some x -> x
-  | None -> assert false
 
 module Heap (Ord: OrderedType) =
   struct

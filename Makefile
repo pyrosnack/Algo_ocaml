@@ -5,8 +5,8 @@ all: 		lib doc
 
 clean:
 			$(OCB) -clean
-			rm *~
-			rm **/*~
+			@rm *~ 2> /dev/null || true
+			@rm **/*~ 2> /dev/null || true
 
 lib:
 			$(OCB) algo.cma
