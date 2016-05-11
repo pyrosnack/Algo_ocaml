@@ -1,0 +1,9 @@
+S src
+S src/misc
+S src/binom
+S src/prioqueue
+
+B _build/src
+B _build/src/misc
+B _build/src/binom
+B _build/src/prioqueue
